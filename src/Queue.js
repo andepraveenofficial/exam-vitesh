@@ -19,9 +19,9 @@ class Queue{
         this.totalPerimeter = 0;
     }
 
-    enqueue(area, perimeter){
-        const obj = {area, perimeter}
-        this.display().push(obj);
+    enqueue(shape){
+        this.display().push(shape);
+        const perimeter = shape.perimeter();
         this.totalPerimeter += perimeter;
     }
 
@@ -49,7 +49,9 @@ class Queue{
         }
         else{
             const firstItem = this.display().shift();
-            this.totalPerimeter -= firstItem.perimeter;
+            const perimeter = firstItem.perimeter();
+
+            this.totalPerimeter -= perimeter;
             return firstItem;
         }
     }

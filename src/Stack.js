@@ -17,9 +17,10 @@ class Stack{
         this.totalArea = 0;
     }
 
-    push(area, perimeter){
-        const obj = {area, perimeter}
-        this.display().push(obj);
+    push(shape){
+        // const obj = {area, perimeter}
+        this.display().push(shape);
+        const area = shape.area();
         this.totalArea += area;
     }
 
@@ -30,7 +31,6 @@ class Stack{
     isEmpty(){
         return this.size() === 0;
     }
-
 
     peek(){
         if (this.isEmpty()){
@@ -47,7 +47,9 @@ class Stack{
         }
         else{
             const poppedItem = this.display().pop();
-            this.totalArea -= poppedItem.area
+            const area = poppedItem.area();
+
+            this.totalArea -= area
             return poppedItem;
         }
     }
