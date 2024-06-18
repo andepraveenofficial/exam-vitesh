@@ -29,12 +29,21 @@ class Singleton{
         return this.items
     }
 
+    log(){
+        if (this.display().queue.length === 0 && this.display().stack.length === 0){
+            this.logError();
+        }
+        else{
+            this.logSuccess();
+        }
+    }
+
     logSuccess(){
-        console.log("Log Success", this.display());
+        console.log("Log Success");
     }
 
     logError(){
-        console.log("Singleton instance creation failed");
+        console.log("Log Failure");
     }
 }
 
