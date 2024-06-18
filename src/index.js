@@ -31,12 +31,9 @@ console.log(queue.display())
 */
 
 class Main{
-    constructor(){
-        this.items = [];
-    }
-
+    
     add(shapeType, values){
-        console.log(shapeType, values)
+        // console.log(shapeType, values)
         const shape = shapeFactory.createShape(shapeType, values);
         
         const areaAndPerimeter = shape.areaAndPerimeter();
@@ -46,7 +43,7 @@ class Main{
         // queue.enqueue(area, perimeter);
          queue.enqueue(shape);
         
-        console.log("total perimeter", queue.totalPerimeter)
+        // console.log("total perimeter", queue.totalPerimeter)
         if (queue.totalPerimeter > 100){
             console.log("total perimeter exceeded")
             while (queue.totalPerimeter > 100){
@@ -54,14 +51,15 @@ class Main{
                 // console.log(item)
                 stack.push(dequeuedItem);
            
-               console.log("total area : ", stack.totalArea);
+            //    console.log("total area : ", stack.totalArea);
                if (stack.totalArea > 200){
                  console.log("total area exceeded");
                  stack.pop();
-                 console.log(stack.display())
+                //  console.log(stack.display())
                 }
             }
         }
+        console.table(instance1.display());
     }
 }
 
@@ -69,41 +67,47 @@ class Main{
 const main = new Main();
 
 main.add("rectangle", [8, 12]);
+// console.log("queue : ", queue.display())
+// console.log("stack :", stack.display())
 
-console.log("queue : ", queue.display())
-console.log("stack :", stack.display())
-
-console.log("----------")
+// console.log("----------")
 
 main.add("rectangle", [10, 20]);
 
-console.log("queue : ", queue.display())
-console.log("stack :", stack.display())
+// console.log("queue : ", queue.display())
+// console.log("stack :", stack.display())
 
-console.log("----------")
+// console.log("----------")
 
 main.add("square", 10);
 
-console.log("queue : ", queue.display())
-console.log("stack :", stack.display())
 
-console.log("----------")
+// console.log("queue : ", queue.display())
+// console.log("stack :", stack.display())
+
+// console.log("----------")
 
 main.add("square", 20);
 
-console.log("queue : ", queue.display())
-console.log("stack :", stack.display())
+// console.log("queue : ", queue.display())
+// console.log("stack :", stack.display())
 
-console.log("----------")
+// console.log("----------")
 
 main.add("square", 30);
 
-console.log("queue : ", queue.display())
-console.log("stack :", stack.display())
+// console.log("queue : ", queue.display())
+// console.log("stack :", stack.display())
 
-console.log("================")
+// console.log("================")
 
-console.log(queue);
-console.log(stack);
+// console.log(queue);
+// console.log(stack);
 
-console.log("===============")
+// console.log("===============")
+
+console.log("----------------")
+
+instance1.logSuccess();
+
+console.log("===================")

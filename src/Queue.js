@@ -12,10 +12,13 @@ Methods :
     * display()
 */
 
+const singleton = require("./Singleton.js");
 
 class Queue{
     constructor(){
-        this.items = [];
+        this.singleton = singleton.getInstance();
+        console.log(this.singleton.display().queue);
+        this.items = this.singleton.display().queue;
         this.totalPerimeter = 0;
     }
 

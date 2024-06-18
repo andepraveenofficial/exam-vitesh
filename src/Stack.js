@@ -11,9 +11,14 @@ Methods :
     * pop()
 */
 
+
+const singleton = require("./Singleton.js");
+
 class Stack{
     constructor(){
-        this.items = [];
+        this.singleton = singleton.getInstance();
+        // console.log(this.singleton.display().stack)
+        this.items = this.singleton.display().stack;
         this.totalArea = 0;
     }
 

@@ -12,7 +12,7 @@ Methods :
 
 class Singleton{
     constructor(){
-        this.items = [];
+        this.items = { queue:[], stack:[]};
         Singleton.instance  = this;
     }
     
@@ -25,9 +25,16 @@ class Singleton{
         this.display().push(item)
     }
 
-
     display(){
-        return Singleton.instance.items
+        return this.items
+    }
+
+    logSuccess(){
+        console.log("Log Success", this.display());
+    }
+
+    logError(){
+        console.log("Singleton instance creation failed");
     }
 }
 
